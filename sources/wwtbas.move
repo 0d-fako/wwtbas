@@ -1,8 +1,8 @@
 
 module wwtbas::wwtbas{
 
-    use std::object;
-
+    use sui::debug;
+    use sui::
     public struct Quiz has key, store{
         id:UID,
     }
@@ -11,10 +11,11 @@ module wwtbas::wwtbas{
         quiz.id;
     }
 
-    public fun new_quiz(): Quiz {
+    public fun new_quiz(ctx: @mut TxContent): Quiz {
         let quiz:Quiz = Quiz {
-            id: object::new(ctx:ctx),
+            id: object::new(ctx),
+            questions: 
         };
-        quiz
+        transfer::public_transfer(quiz, ctx.sender);
     }
 }
