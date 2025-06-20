@@ -232,7 +232,6 @@ module wwtbas::wwtbas {
 
     // === Helper Functions ===
 
-    /// Create a sample question for testing
     public fun create_sample_question(): Question {
         Question {
             question_text: string::utf8(b"What is the capital of Malawi?"),
